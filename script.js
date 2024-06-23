@@ -6,11 +6,11 @@ function selectNumber(number) {
     selectedNumber = number;
     betType = 'number';
     document.querySelectorAll('.buttons button').forEach(button => {
-        button.classList.remove('selected');
+        button.classList.remove('selected', 'highlight');
     });
-    document.querySelector(`.buttons button:nth-child(${number + 1})`).classList.add('selected');
+    document.querySelector(`.buttons button:nth-child(${number + 1})`).classList.add('selected', 'highlight');
     document.querySelectorAll('.bet-type button').forEach(button => {
-        button.classList.remove('selected');
+        button.classList.remove('selected', 'highlight');
     });
 }
 
@@ -18,12 +18,12 @@ function betOnColor(color) {
     selectedNumber = null;
     betType = color;
     document.querySelectorAll('.buttons button').forEach(button => {
-        button.classList.remove('selected');
+        button.classList.remove('selected', 'highlight');
     });
     document.querySelectorAll('.bet-type button').forEach(button => {
-        button.classList.remove('selected');
+        button.classList.remove('selected', 'highlight');
     });
-    document.querySelector(`.bet-type button.${color}`).classList.add('selected');
+    document.querySelector(`.bet-type button.${color}`).classList.add('selected', 'highlight');
 }
 
 function spinRoulette() {
