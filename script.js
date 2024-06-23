@@ -9,6 +9,9 @@ function selectNumber(number) {
         button.classList.remove('selected');
     });
     document.querySelector(`.buttons button:nth-child(${number + 1})`).classList.add('selected');
+    document.querySelectorAll('.bet-type button').forEach(button => {
+        button.classList.remove('selected');
+    });
 }
 
 function betOnColor(color) {
@@ -17,6 +20,10 @@ function betOnColor(color) {
     document.querySelectorAll('.buttons button').forEach(button => {
         button.classList.remove('selected');
     });
+    document.querySelectorAll('.bet-type button').forEach(button => {
+        button.classList.remove('selected');
+    });
+    document.querySelector(`.bet-type button.${color}`).classList.add('selected');
 }
 
 function spinRoulette() {
