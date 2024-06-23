@@ -38,7 +38,3 @@ function spinRoulette() {
         }
     }, 5000); // Wait for the wheel to stop spinning
 }
-
-// Initializing the wheel segments
-document.querySelectorAll('.number').forEach((number, index) => {
-    number.style.transform = `rotate(calc(${index}
