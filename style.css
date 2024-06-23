@@ -48,6 +48,9 @@ button:hover {
     width: 300px;
     height: 300px;
     margin: 20px auto;
+    border: 10px solid #ecf0f1;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .wheel {
@@ -55,13 +58,11 @@ button:hover {
     height: 100%;
     position: absolute;
     border-radius: 50%;
-    border: 10px solid #ecf0f1;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     transform: rotate(0deg);
     transition: transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
-.number {
+.segment {
     position: absolute;
     width: 50%;
     height: 50%;
@@ -75,13 +76,13 @@ button:hover {
     clip-path: polygon(50% 50%, 100% 0, 100% 100%);
 }
 
-.number:nth-child(odd) {
+.segment:nth-child(odd) {
     background-color: #bdc3c7;
 }
 
 .pointer {
     position: absolute;
-    top: -10px;
+    top: -20px;
     left: 50%;
     width: 0;
     height: 0;
