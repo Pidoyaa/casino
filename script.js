@@ -1,12 +1,22 @@
 let wallet = 2000;
 let selectedNumber = null;
+let betType = null;
 
 function selectNumber(number) {
     selectedNumber = number;
+    betType = 'number';
     document.querySelectorAll('.buttons button').forEach(button => {
         button.classList.remove('selected');
     });
     document.querySelector(`.buttons button:nth-child(${number + 1})`).classList.add('selected');
+}
+
+function betOnColor(color) {
+    selectedNumber = null;
+    betType = color;
+    document.querySelectorAll('.buttons button').forEach(button => {
+        button.classList.remove('selected');
+    });
 }
 
 function spinRoulette() {
@@ -14,8 +24,8 @@ function spinRoulette() {
     const resultMessage = document.getElementById('result-message');
     const walletElement = document.getElementById('wallet');
 
-    if (selectedNumber === null) {
-        resultMessage.textContent = "Veuillez sélectionner un numéro.";
+    if (betType === null) {
+        resultMessage.textContent = "Veuillez sélectionner un numéro ou une couleur.";
         return;
     }
 
@@ -24,22 +34,30 @@ function spinRoulette() {
         return;
     }
 
-    const winningNumber = Math.floor(Math.random() * 31);
+    const winningNumber = Math.floor(Math.random() * 30);
     wallet -= betAmount;
     walletElement.textContent = wallet;
 
     let currentNumber = 0;
+    let cycles = 0;
     const interval = setInterval(() => {
         resultMessage.textContent = `Le numéro gagnant est... ${currentNumber}`;
-        if (currentNumber === winningNumber) {
+        if (currentNumber === winningNumber && cycles >= 3) {
             clearInterval(interval);
             setTimeout(() => {
-                if (selectedNumber === winningNumber) {
-                    const winnings = betAmount * 20;
+                const winningColor = (winningNumber % 2 === 0) ? 'black' : 'red';
+                let winnings = 0;
+                if (betType === 'number' && selectedNumber === winningNumber) {
+                    winnings = betAmount * 20;
+                } else if (betType === winningColor) {
+                    winnings = betAmount * 1.5;
+                }
+
+                if (winnings > 0) {
                     wallet += winnings;
-                    resultMessage.textContent = `Félicitations ! Le numéro gagnant est ${winningNumber}. Vous avez gagné ${winnings}€.`;
+                    resultMessage.textContent = `Félicitations ! Le numéro gagnant est ${winningNumber} (${winningColor}). Vous avez gagné ${winnings}€.`;
                 } else {
-                    resultMessage.textContent = `Désolé, le numéro gagnant est ${winningNumber}. Vous avez perdu ${betAmount}€.`;
+                    resultMessage.textContent = `Désolé, le numéro gagnant est ${winningNumber} (${winningColor}). Vous avez perdu ${betAmount}€.`;
                 }
 
                 walletElement.textContent = wallet;
@@ -48,7 +66,9 @@ function spinRoulette() {
                     resultMessage.textContent += " Vous n'avez plus d'argent dans votre portefeuille.";
                 }
             }, 1000);
+        } else {
+            currentNumber = (currentNumber + 1) % 30;
+            if (currentNumber === 0) cycles++;
         }
-        currentNumber = (currentNumber + 1) % 31;
     }, 100);
 }
