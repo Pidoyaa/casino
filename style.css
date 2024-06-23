@@ -43,6 +43,10 @@ button:hover {
     background-color: #c0392b;
 }
 
+button.selected {
+    background-color: #27ae60;
+}
+
 input[type="number"] {
     width: 200px;
     padding: 10px;
