@@ -14,40 +14,43 @@
         </div>
         <div class="roulette">
             <div class="buttons">
-                <!-- Générer 31 boutons numérotés de 0 à 30 -->
-                <button onclick="selectNumber(0)">0</button>
-                <button onclick="selectNumber(1)">1</button>
-                <button onclick="selectNumber(2)">2</button>
-                <button onclick="selectNumber(3)">3</button>
-                <button onclick="selectNumber(4)">4</button>
-                <button onclick="selectNumber(5)">5</button>
-                <button onclick="selectNumber(6)">6</button>
-                <button onclick="selectNumber(7)">7</button>
-                <button onclick="selectNumber(8)">8</button>
-                <button onclick="selectNumber(9)">9</button>
-                <button onclick="selectNumber(10)">10</button>
-                <button onclick="selectNumber(11)">11</button>
-                <button onclick="selectNumber(12)">12</button>
-                <button onclick="selectNumber(13)">13</button>
-                <button onclick="selectNumber(14)">14</button>
-                <button onclick="selectNumber(15)">15</button>
-                <button onclick="selectNumber(16)">16</button>
-                <button onclick="selectNumber(17)">17</button>
-                <button onclick="selectNumber(18)">18</button>
-                <button onclick="selectNumber(19)">19</button>
-                <button onclick="selectNumber(20)">20</button>
-                <button onclick="selectNumber(21)">21</button>
-                <button onclick="selectNumber(22)">22</button>
-                <button onclick="selectNumber(23)">23</button>
-                <button onclick="selectNumber(24)">24</button>
-                <button onclick="selectNumber(25)">25</button>
-                <button onclick="selectNumber(26)">26</button>
-                <button onclick="selectNumber(27)">27</button>
-                <button onclick="selectNumber(28)">28</button>
-                <button onclick="selectNumber(29)">29</button>
-                <button onclick="selectNumber(30)">30</button>
+                <!-- Générer 30 boutons numérotés de 0 à 29 -->
+                <button class="black" onclick="selectNumber(0)">0</button>
+                <button class="red" onclick="selectNumber(1)">1</button>
+                <button class="black" onclick="selectNumber(2)">2</button>
+                <button class="red" onclick="selectNumber(3)">3</button>
+                <button class="black" onclick="selectNumber(4)">4</button>
+                <button class="red" onclick="selectNumber(5)">5</button>
+                <button class="black" onclick="selectNumber(6)">6</button>
+                <button class="red" onclick="selectNumber(7)">7</button>
+                <button class="black" onclick="selectNumber(8)">8</button>
+                <button class="red" onclick="selectNumber(9)">9</button>
+                <button class="black" onclick="selectNumber(10)">10</button>
+                <button class="red" onclick="selectNumber(11)">11</button>
+                <button class="black" onclick="selectNumber(12)">12</button>
+                <button class="red" onclick="selectNumber(13)">13</button>
+                <button class="black" onclick="selectNumber(14)">14</button>
+                <button class="red" onclick="selectNumber(15)">15</button>
+                <button class="black" onclick="selectNumber(16)">16</button>
+                <button class="red" onclick="selectNumber(17)">17</button>
+                <button class="black" onclick="selectNumber(18)">18</button>
+                <button class="red" onclick="selectNumber(19)">19</button>
+                <button class="black" onclick="selectNumber(20)">20</button>
+                <button class="red" onclick="selectNumber(21)">21</button>
+                <button class="black" onclick="selectNumber(22)">22</button>
+                <button class="red" onclick="selectNumber(23)">23</button>
+                <button class="black" onclick="selectNumber(24)">24</button>
+                <button class="red" onclick="selectNumber(25)">25</button>
+                <button class="black" onclick="selectNumber(26)">26</button>
+                <button class="red" onclick="selectNumber(27)">27</button>
+                <button class="black" onclick="selectNumber(28)">28</button>
+                <button class="red" onclick="selectNumber(29)">29</button>
             </div>
             <input type="number" id="bet-amount" placeholder="Montant de la mise" min="1">
+            <div class="bet-type">
+                <button onclick="betOnColor('red')">Rouge</button>
+                <button onclick="betOnColor('black')">Noir</button>
+            </div>
             <button onclick="spinRoulette()">Jouer</button>
         </div>
         <div class="result">
