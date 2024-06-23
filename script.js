@@ -18,7 +18,7 @@ function spinRoulette() {
     }
 
     const winningNumber = Math.floor(Math.random() * 31);
-    const degree = (winningNumber * (360 / 31)) + (360 * 3); // 3 full spins
+    const degree = (360 / 31) * winningNumber + (360 * 3); // 3 full spins plus the winning number
     wheel.style.transform = `rotate(${degree}deg)`;
 
     setTimeout(() => {
@@ -38,3 +38,8 @@ function spinRoulette() {
         }
     }, 5000); // Wait for the wheel to stop spinning
 }
+
+// Initializing the wheel segments
+document.querySelectorAll('.wheel-segment').forEach((segment, index) => {
+    segment.style.setProperty('--i', index);
+});
