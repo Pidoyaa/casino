@@ -4,9 +4,9 @@ let selectedNumber = null;
 function selectNumber(number) {
     selectedNumber = number;
     document.querySelectorAll('.buttons button').forEach(button => {
-        button.style.backgroundColor = '#e74c3c';
+        button.classList.remove('selected');
     });
-    document.querySelector(`.buttons button:nth-child(${number + 1})`).style.backgroundColor = '#27ae60';
+    document.querySelector(`.buttons button:nth-child(${number + 1})`).classList.add('selected');
 }
 
 function spinRoulette() {
