@@ -46,6 +46,10 @@ button.selected {
     background-color: yellow;
 }
 
+button.highlight {
+    outline: 2px solid #2ecc71; /* Bordure verte */
+}
+
 button.red {
     background-color: red;
 }
