@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Roulette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue au Casino Roulette</h1>
+        <div class="wallet">
+            <p>Portefeuille: <span id="wallet">2000</span>€</p>
+        </div>
+        <div class="roulette">
+            <input type="number" id="bet-number" placeholder="Miser sur un chiffre (0-30)" min="0" max="30">
+            <input type="number" id="bet-amount" placeholder="Montant de la mise" min="1">
+            <button onclick="spinRoulette()">Jouer</button>
+        </div>
+        <div class="result">
+            <p id="result-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
