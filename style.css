@@ -33,7 +33,6 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #e74c3c;
     color: #ecf0f1;
     font-size: 16px;
     cursor: pointer;
@@ -47,6 +46,14 @@ button.selected {
     background-color: #27ae60;
 }
 
+button.red {
+    background-color: #e74c3c;
+}
+
+button.black {
+    background-color: #34495e;
+}
+
 input[type="number"] {
     width: 200px;
     padding: 10px;
@@ -58,4 +65,14 @@ input[type="number"] {
 button:last-child {
     display: block;
     margin: 20px auto 0;
+}
+
+.bet-type {
+    margin-top: 10px;
+}
+
+.bet-type button {
+    margin: 0 5px;
+    width: 100px;
+    background-color: #95a5a6;
 }
