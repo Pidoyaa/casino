@@ -39,19 +39,19 @@ button {
 }
 
 button:hover {
-    background-color: #c0392b;
+    opacity: 0.8;
 }
 
 button.selected {
-    background-color: #27ae60;
+    background-color: yellow;
 }
 
 button.red {
-    background-color: #e74c3c;
+    background-color: red;
 }
 
 button.black {
-    background-color: #34495e;
+    background-color: black;
 }
 
 input[type="number"] {
@@ -75,4 +75,9 @@ button:last-child {
     margin: 0 5px;
     width: 100px;
     background-color: #95a5a6;
+    color: black;
+}
+
+.bet-type button.selected {
+    background-color: yellow;
 }
