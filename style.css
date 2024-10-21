@@ -1,87 +1,64 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.container {
+.hero {
+    background: url('images/fond-accueil.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
     text-align: center;
-    background-color: #34495e;
+}
+
+.produits-section {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.wallet, .roulette, .result {
-    margin: 20px 0;
+.produits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(6, 50px);
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 20px;
+.produit {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: calc(25% - 20px);
+    transition: transform 0.3s;
+    background: white;
+}
+
+.produit:hover {
+    transform: scale(1.05);
+}
+
+.produit img {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
 button {
     padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 5px;
-    color: #ecf0f1;
-    font-size: 16px;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button:hover {
-    opacity: 0.8;
+    background-color: #45a049;
 }
 
-button.selected {
-    background-color: yellow;
-}
-
-button.highlight {
-    outline: 2px solid #2ecc71; /* Bordure verte */
-}
-
-button.red {
-    background-color: red;
-}
-
-button.black {
-    background-color: black;
-}
-
-input[type="number"] {
-    width: 200px;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-}
-
-button:last-child {
-    display: block;
-    margin: 20px auto 0;
-}
-
-.bet-type {
-    margin-top: 10px;
-}
-
-.bet-type button {
-    margin: 0 5px;
-    width: 100px;
-    background-color: #95a5a6;
-    color: black;
-}
-
-.bet-type button.selected {
-    background-color: yellow;
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
 }
